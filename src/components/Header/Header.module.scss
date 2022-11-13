@@ -1,9 +1,17 @@
+@import "../../assets/styles/variables";
+
 .logo{
     height: 68px;
     width: 210px;
 }
 
-.linkHeader{
+a{
+    text-decoration: none;
+    color: $primary;
     font-size: 24px;
     font-weight: 500;
+}
+
+.link-active{
+    text-decoration: underline;
 }

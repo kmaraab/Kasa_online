@@ -1,0 +1,25 @@
+@import "../../assets/styles/variables";
+
+.maskGroup{
+    background: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("../../assets/images/nature.png");
+    height: 223px;
+    border-radius: 25px;
+}
+
+.maskGroupTitle{
+    color: white;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.thumbFullContainer{
+    border-radius: 25px;
+    background-color: $gray-1;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(3, 340px);
+    grid-auto-columns: repeat(3, 340px);
+    gap: 35px;
+}
