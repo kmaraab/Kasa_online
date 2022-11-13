@@ -1,7 +1,34 @@
 import Thumb from "../../components/Thumb/Thumb";
 import styles from "./Accueil.module.scss";
+// import { useEffect } from "react";
 
 function Accueil (){
+
+    fetch("../../data/logements.json")
+    // .then(response => response.json())
+    .then(data=> console.log(data))
+    .catch(() => console.log("error"))
+
+
+    // useEffect(()=>{
+    //     async function fetchDataLocations (){
+    //         try{
+    //             const response = await fetch("../../data/logements.json");
+    //             if(response.ok){
+    //                 const dataLocations = response;
+    //                 console.log(dataLocations);
+    //             }
+    //             else{
+    //                 console.log("Erreur 1")    
+    //             }
+    //         }catch(e){
+    //             console.log("Erreur")
+    //         }
+    //     }
+    //     fetchDataLocations();
+    // }, [])
+
+
     return(
         <div>
             <div className={`${styles.maskGroup} d-flex justify-content-center align-items-center mx-100 mb-20`}>
