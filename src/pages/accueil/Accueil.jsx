@@ -1,32 +1,28 @@
 import Thumb from "../../components/Thumb/Thumb";
 import styles from "./Accueil.module.scss";
-// import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Accueil (){
+    const [dataLocations, setDataLocations] = useState([]);
 
-    fetch("../../data/logements.json")
-    // .then(response => response.json())
-    .then(data=> console.log(data))
-    .catch(() => console.log("error"))
-
-
-    // useEffect(()=>{
-    //     async function fetchDataLocations (){
-    //         try{
-    //             const response = await fetch("../../data/logements.json");
-    //             if(response.ok){
-    //                 const dataLocations = response;
-    //                 console.log(dataLocations);
-    //             }
-    //             else{
-    //                 console.log("Erreur 1")    
-    //             }
-    //         }catch(e){
-    //             console.log("Erreur")
-    //         }
-    //     }
-    //     fetchDataLocations();
-    // }, [])
+    useEffect(()=>{
+        async function fetchDataLocations (){
+            try{
+                const response = await fetch("data/logements.json");
+                if(response.ok){
+                    const data = await response.json();
+                    console.log(data);
+                    setDataLocations(data);
+                }
+                else{
+                    console.log("Erreur 1")    
+                }
+            }catch(e){
+                console.log("Erreur")
+            }
+        }
+        fetchDataLocations();
+    }, [])
 
 
     return(
@@ -35,7 +31,7 @@ function Accueil (){
                 <p className={styles.maskGroupTitle}>Chez vous, partout et ailleurs</p>
             </div>
             <section className={`${styles.thumbFullContainer} mx-100`}>
-                <Thumb id="1234" title="Titre de la location" cover="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"/>
+                {dataLocations.map(value => <Thumb id={value.id} title={value.title} cover={value.cover}/>)}
             </section>
         </div>
     )
