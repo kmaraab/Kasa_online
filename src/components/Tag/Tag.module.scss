@@ -1,0 +1,11 @@
+@import "../../assets/styles/variables";
+
+.tagContenair{
+  margin-top: 10px;
+  margin-right: 10px;
+  color: white;
+  background-color: $primary;
+  padding: 8px 30px;
+  border-radius: 30px; 
+  width: fit-content; 
+}

@@ -1,0 +1,22 @@
+@import "../../assets/styles/variables";
+
+.imgProfile{
+    border-radius: 50px;
+    width: 64px;
+    height: 64px;
+    background-position: center;
+    background-size: cover;
+}
+
+.titleProfile{
+    width: 100px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.reviews{
+    text-align: right;
+    margin-top: 10px;
+    font-size: 30px;
+    color: #E3E3E3;
+}

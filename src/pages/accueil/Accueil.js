@@ -1,27 +1,26 @@
-import Thumb from '../../components/Thumb/Thumb'
-import styles from './Accueil.module.scss'
-import { useEffect, useState } from 'react'
+import Card from '../../components/Card/Card';
+import styles from './Accueil.module.scss';
+import { useEffect, useState } from 'react';
 
 function Accueil() {
-  const [dataLocations, setDataLocations] = useState([])
+  const [dataLocations, setDataLocations] = useState([]);
 
   useEffect(() => {
     async function fetchDataLocations() {
       try {
-        const response = await fetch('data/logements.json')
+        const response = await fetch('data/logements.json');
         if (response.ok) {
-          const data = await response.json()
-          console.log(data)
-          setDataLocations(data)
+          const data = await response.json();
+          setDataLocations(data);
         } else {
-          console.log('Erreur 1')
+          console.log('Erreur 1');
         }
       } catch (e) {
-        console.log('Erreur')
+        console.log('Erreur');
       }
     }
-    fetchDataLocations()
-  }, [])
+    fetchDataLocations();
+  }, []);
 
   return (
     <div>
@@ -30,13 +29,13 @@ function Accueil() {
       >
         <p className={styles.maskGroupTitle}>Chez vous, partout et ailleurs</p>
       </div>
-      <section className={`${styles.thumbFullContainer} mx-100`}>
+      <section className={`${styles.cardFullContainer} mx-100`}>
         {dataLocations.map((value) => (
-          <Thumb id={value.id} title={value.title} cover={value.cover} />
+          <Card id={value.id} title={value.title} cover={value.cover} />
         ))}
       </section>
     </div>
-  )
+  );
 }
 
-export default Accueil
+export default Accueil;
