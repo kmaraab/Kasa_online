@@ -1,20 +1,15 @@
-import { useState } from 'react';
+import styles from './Reviews.module.scss';
 
 function Reviews({ level }) {
-  const [reviews, setReviews] = useState([]);
-  const etoileVide = 5 - level;
+  const tabEtoile = [1, 2, 3, 4, 5];
 
-  for (let i = 0; i < level; i++) {
-    setReviews([
-      ...reviews,
-      '<i className="fa-solid fa-star" style={{ color: "#FF6060l }}></i>',
-    ]);
-  }
-  for (let j = 0; j < etoileVide; j++) {
-    setReviews([...reviews, '<i className="fa-solid fa-star"></i>']);
-  }
-
-  return <>{console.log(reviews)}</>;
+  return tabEtoile.map((elem) =>
+    level >= elem ? (
+      <i className={`${styles.etoilePleine} fa-solid fa-star`}></i>
+    ) : (
+      <i className="fa-solid fa-star"></i>
+    )
+  );
 }
 
 export default Reviews;

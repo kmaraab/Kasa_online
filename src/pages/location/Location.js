@@ -23,9 +23,7 @@ function Location() {
   useEffect(() => {
     async function fetchDataLocation() {
       try {
-        const response = await fetch(
-          'http://localhost:3000/data/logements.json'
-        );
+        const response = await fetch('/data/logements.json');
         if (response.ok) {
           const data = await response.json();
           const dataFilter = getLocation(data, id);
@@ -37,6 +35,7 @@ function Location() {
           console.log('error');
         }
       } catch (e) {
+        window.location.href = '/error';
         console.log('error');
       }
     }
@@ -73,7 +72,7 @@ function Location() {
               ></div>
             </div>
             <div className={styles.reviews}>
-              {/* <Reviews level={dataLocation.rating} /> */}
+              <Reviews level={dataLocation.rating} />
             </div>
           </div>
         </div>
