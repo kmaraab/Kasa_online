@@ -31,7 +31,12 @@ function Accueil() {
       </div>
       <section className={`${styles.cardFullContainer} mx-100`}>
         {dataLocations.map((value) => (
-          <Card id={value.id} title={value.title} cover={value.cover} />
+          <Card
+            key={value.id}
+            id={value.id}
+            title={value.title}
+            cover={value.cover}
+          />
         ))}
       </section>
     </div>

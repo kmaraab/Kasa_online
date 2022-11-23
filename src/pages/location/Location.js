@@ -28,16 +28,16 @@ function Location() {
           const data = await response.json();
           const dataFilter = getLocation(data, id);
           setDataLocation(dataFilter);
-          console.log(dataFilter);
+          // console.log(dataFilter);
           if (dataFilter.length !== 0) {
             setLoading(true);
           }
         } else {
-          console.log('error');
+          // console.log('error');
         }
       } catch (e) {
         window.location.href = '/error';
-        console.log('error');
+        // console.log('error');
       }
     }
     fetchDataLocation();
@@ -62,7 +62,7 @@ function Location() {
             <h3 style={{ fontWeight: '300' }}>{dataLocation.location}</h3>
             <div className="d-flex">
               {dataLocation.tags.map((value) => (
-                <Tag content={value} />
+                <Tag key={value.trim()} content={value} />
               ))}
             </div>
           </div>

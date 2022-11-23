@@ -5,9 +5,12 @@ function Reviews({ level }) {
 
   return tabEtoile.map((elem) =>
     level >= elem ? (
-      <i className={`${styles.etoilePleine} fa-solid fa-star`}></i>
+      <i
+        key={elem.toString()}
+        className={`${styles.etoilePleine} fa-solid fa-star`}
+      ></i>
     ) : (
-      <i className="fa-solid fa-star"></i>
+      <i key={elem.toString()} className="fa-solid fa-star"></i>
     )
   );
 }

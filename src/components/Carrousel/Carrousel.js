@@ -30,7 +30,12 @@ function Carrousel({ nbrImg, imgs }) {
         style={{ transform: 'translate(' + indexPivot * 100 + '%)' }}
       >
         {imgs.map((e) => (
-          <img src={e} className={styles.photo} alt="img_slide" />
+          <img
+            key={e.trim()}
+            src={e}
+            className={styles.photo}
+            alt="img_slide"
+          />
         ))}
       </div>
       {indexPivot === -nbrImg + 1 ? null : (

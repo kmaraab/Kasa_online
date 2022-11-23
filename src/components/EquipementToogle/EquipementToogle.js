@@ -23,9 +23,9 @@ function EquipementToogle({ title, description }) {
         />
       </h2>
       {visible && (
-        <p className={styles.content}>
+        <div className={styles.content}>
           <ul>{description}</ul>
-        </p>
+        </div>
       )}
     </div>
   );
