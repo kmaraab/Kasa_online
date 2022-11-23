@@ -5,7 +5,7 @@ import styles from './Location.module.scss';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Reviews from '../../components/Reviews/Reviews';
-import Carousels from '../../components/Carousel/Carousel';
+import Carrousel from '../../components/Carrousel/Carrousel';
 
 function Location() {
   const [dataLocation, setDataLocation] = useState([]);
@@ -28,7 +28,8 @@ function Location() {
           const data = await response.json();
           const dataFilter = getLocation(data, id);
           setDataLocation(dataFilter);
-          if (dataFilter.lenght !== 0) {
+          console.log(dataFilter);
+          if (dataFilter.length !== 0) {
             setLoading(true);
           }
         } else {
@@ -44,7 +45,14 @@ function Location() {
 
   return (
     <div className="px-100">
-      {loading && <Carousels dataImg={dataLocation.pictures} />}
+      {loading && (
+        <div className="mb-20">
+          <Carrousel
+            imgs={dataLocation.pictures}
+            nbrImg={dataLocation.pictures.length}
+          />
+        </div>
+      )}
       {loading && (
         <div className="d-flex justify-content-spacebetween align-items-center">
           <div>
