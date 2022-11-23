@@ -5,12 +5,29 @@
 .errorType{
     font-size: 288px;
     font-weight: 700;
+    @media screen and (max-width:888px) {
+        margin-top: 30px;
+        font-size: 180px;
+    }
+    @media screen and (max-width:400px) {
+        margin-top: 70px;
+        font-size: 100px;
+    }
 }
 
 .errorMessage{
     font-size: 36px;
     font-weight: 500;
     margin-bottom: 182px;
+    @media screen and (max-width:888px) {
+        font-size: 25px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+    }
+    @media screen and (max-width:400px) {
+        font-size: 20px;
+    }
 }
 
 .backToHome{

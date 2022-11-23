@@ -44,7 +44,7 @@ function Location() {
   }, [id]);
 
   return (
-    <div className="px-100">
+    <div className={`${styles.container} px-100`}>
       {loading && (
         <div className="mb-20">
           <Carrousel
@@ -54,20 +54,30 @@ function Location() {
         </div>
       )}
       {loading && (
-        <div className="d-flex justify-content-spacebetween align-items-center">
+        <div
+          className={`${styles.sectionPresentation} d-flex justify-content-spacebetween align-items-center`}
+        >
           <div>
-            <h2 style={{ fontWeight: '400', fontSize: '30px' }}>
+            <h2
+              className={styles.titleLocation}
+              style={{ fontWeight: '400', fontSize: '30px' }}
+            >
               {dataLocation.title}
             </h2>
-            <h3 style={{ fontWeight: '300' }}>{dataLocation.location}</h3>
-            <div className="d-flex">
+            <h3
+              className={styles.adresseLocation}
+              style={{ fontWeight: '300' }}
+            >
+              {dataLocation.location}
+            </h3>
+            <div className={`${styles.tagsContainer} d-flex`}>
               {dataLocation.tags.map((value) => (
                 <Tag key={value.trim()} content={value} />
               ))}
             </div>
           </div>
 
-          <div>
+          <div className={styles.profilContainer}>
             <div className="d-flex align-items-center">
               <h4 className={`${styles.titleProfile} mr-15`}>
                 {dataLocation.host.name}
@@ -86,15 +96,17 @@ function Location() {
         </div>
       )}
       {loading && (
-        <div className="d-flex justify-content-spacebetween">
-          <span style={{ width: '48%' }}>
+        <div
+          className={`${styles.toogleContainer} d-flex justify-content-spacebetween`}
+        >
+          <span style={{ width: '100%', marginRight: '10px' }}>
             <Toogle
               title="Description"
               description={dataLocation.description}
             />
           </span>
 
-          <span style={{ width: '48%' }}>
+          <span style={{ width: '100%' }}>
             <EquipementToogle
               description={dataLocation.equipments.map((value) => (
                 <li key={value.trim()}> {value} </li>

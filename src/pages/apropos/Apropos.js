@@ -1,11 +1,11 @@
-import AboutToogle from '../../components/Toogle/Toogle'
-import styles from './Apropos.module.scss'
+import AboutToogle from '../../components/Toogle/Toogle';
+import styles from './Apropos.module.scss';
 
 function Apropos() {
   return (
-    <div className="px-100">
+    <div className={`${styles.container} px-100`}>
       <div className={`${styles.img}`}></div>
-      <div className="px-100">
+      <div className={`${styles.containerToogle} px-100`}>
         <AboutToogle
           title="Fiabilité"
           description="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."
@@ -24,7 +24,7 @@ function Apropos() {
         />
       </div>
     </div>
-  )
+  );
 }
 
-export default Apropos
+export default Apropos;
