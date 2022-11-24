@@ -16,6 +16,11 @@ export const router = createBrowserRouter([
         caseSensitive: true,
         element: <Accueil />,
       },
+      {
+        path: '/Kasa_online',
+        caseSensitive: true,
+        element: <Accueil />,
+      },
 
       {
         path: '/apropos',
