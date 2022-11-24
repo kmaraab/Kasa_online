@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Kasa_online/static/css/main.4fd37bde.css",
-    "main.js": "/Kasa_online/static/js/main.fb183472.js",
+    "main.js": "/Kasa_online/static/js/main.54d3061a.js",
     "static/media/montagne.png": "/Kasa_online/static/media/montagne.cc7a05da2ad0e783537a.png",
     "static/media/nature.png": "/Kasa_online/static/media/nature.024f945a990ae17b81b7.png",
     "index.html": "/Kasa_online/index.html",
     "main.4fd37bde.css.map": "/Kasa_online/static/css/main.4fd37bde.css.map",
-    "main.fb183472.js.map": "/Kasa_online/static/js/main.fb183472.js.map"
+    "main.54d3061a.js.map": "/Kasa_online/static/js/main.54d3061a.js.map"
   },
   "entrypoints": [
     "static/css/main.4fd37bde.css",
-    "static/js/main.fb183472.js"
+    "static/js/main.54d3061a.js"
   ]
 }
