@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: '/location/:id',
+        path: '/Kasa_online/location/:id',
         caseSensitive: true,
         element: <Location />,
       },
