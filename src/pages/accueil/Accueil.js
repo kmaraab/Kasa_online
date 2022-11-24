@@ -8,7 +8,7 @@ function Accueil() {
   useEffect(() => {
     async function fetchDataLocations() {
       try {
-        const response = await fetch('data/logements.json');
+        const response = await fetch('/Kasa_online/data/logements.json');
         if (response.ok) {
           const data = await response.json();
           setDataLocations(data);

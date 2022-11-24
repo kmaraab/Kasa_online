@@ -7,7 +7,6 @@ import ErrorPage from './pages/error/ErrorPage';
 
 export const router = createBrowserRouter([
   {
-    basename: '/Kasa_online',
     path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
